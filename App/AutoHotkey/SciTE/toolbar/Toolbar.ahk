@@ -14,7 +14,6 @@
 #Include ProfileUpdate.ahk
 #Include Extensions.ahk
 SetWorkingDir, %A_ScriptDir%
-DetectHiddenWindows, On
 SetBatchLines, -1
 
 ; CLSID and APPID for this script: don't reuse, please!
@@ -61,6 +60,8 @@ IfWinNotExist, ahk_class SciTEWindow
 		ExitApp
 	}
 }
+
+DetectHiddenWindows, On
 
 ; Activate it
 WinActivate
@@ -326,6 +327,9 @@ if FirstTime
 	MsgBox, 64, SciTE4AutoHotkey, Welcome to SciTE4AutoHotkey!
 	Run, "%A_AhkPath%" "%SciTEDir%\tools\PropEdit.ahk"
 }
+
+if regenerateUserProps
+	Run, "%A_AhkPath%" "%SciTEDir%\tools\PropEdit.ahk" /regenerate
 return
 
 ; Toolbar event handler
@@ -586,12 +590,9 @@ GetSciTEOpenedFile()
 	else
 	{
 		WinGetTitle, sctitle, ahk_id %scitehwnd%
-		if !RegExMatch(sctitle, "^(.+?) [-*] SciTE", o)
-		{
-			MsgBox, 16, SciTE4AutoHotkey Toolbar, Bad SciTE window!
-			ExitApp
-		}else
+		if RegExMatch(sctitle, "^(.+?) [-*] SciTE", o)
 			return o1
+		return "?ERROR"
 	}
 }
 

@@ -29,6 +29,7 @@ GenerateDocs(file, docs)
 	<head>
 	<title>%libname%</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="default.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
@@ -180,6 +181,7 @@ Generate_Common(item, prefix="")
 	<head>
 	<title>%prettyname%</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="default.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
@@ -191,7 +193,7 @@ Generate_Common(item, prefix="")
 	filetext .= "`n`n<pre class=""Syntax"">" _HTML(syntax) "</pre>"
 	if params := item.parameters
 	{
-		filetext .= "`n<h3>Parameters</h4>`n<table class=""info"">"
+		filetext .= "`n<h3>Parameters</h4>`n<dl>"
 		params := RegExReplace(params, "`n\s+", "`r")
 		Loop, Parse, params, `n
 		{
@@ -200,9 +202,9 @@ Generate_Common(item, prefix="")
 			pname := RTrim(SubStr(A_LoopField, 1, pos-1))
 			pval := LTrim(SubStr(A_LoopField, pos+1))
 			StringReplace, pval, pval, `r, `n, All
-			filetext .= "`n<tr>`n  <td width=""15%"">" pname "</td>`n  <td width=""85%"">" Markdown2HTML(pval,1) "</td>`n</tr>"
+			filetext .= "`n  <dt>" pname "</dt>`n  <dd>" Markdown2HTML(pval,1) "</dd>"
 		}
-		filetext .= "`n</table>"
+		filetext .= "`n</dl>"
 	}
 	if returns := item.returns
 		filetext .= "`n<h3>Returns</h3>`n" Markdown2HTML(returns)
@@ -241,6 +243,7 @@ Generate_Page(item, prefix="")
 	<head>
 	<title>%name%</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="default.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
@@ -269,6 +272,7 @@ Generate_Class(item, prefix="")
 	<head>
 	<title>%name% Class</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="default.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>

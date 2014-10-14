@@ -1,8 +1,8 @@
-SciTE4AutoHotkey v3.0.06 Portable Edition
-=========================================
+SciTE4AutoHotkey v3.0.06.01 Portable Edition
+============================================
 
 Thank you for downloading SciTE4AutoHotkey.
-Supported platforms: Windows XP SP3+, Vista, 7, 8, 8.1
+Supported platforms: Windows XP SP3+, Vista, 7, 8, 8.1, 10
 
 For the best user experience, use AutoHotkey v1.1+.
 

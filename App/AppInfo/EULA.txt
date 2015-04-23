@@ -1,7 +1,7 @@
-Software License
+License for Scintilla and SciTE
+===============================
 
-Scintilla and SciTE
-Copyright 1998-2014 by Neil Hodgson <neilh@scintilla.org>
+Copyright 1998-2013 by Neil Hodgson <neilh@scintilla.org>
 
 All Rights Reserved
 
@@ -20,10 +20,12 @@ WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
 OR PERFORMANCE OF THIS SOFTWARE.
 
-Everything else
-Copyright 2007-2014 by fincs (@ ahkscript.org forum)
+License for the toolbar, debugger & setting files
+=================================================
+
+Copyright 2007-2013 by fincs (@ ahkscript.org forum)
 
 This program is free software. It comes without any warranty, to
 the extent permitted by applicable law. You can redistribute it and/or
 modify it under the terms of the WTFPL, Version 2, as published by
-Sam Hocevar. The full license text can be found at http://www.wtfpl.net/txt/copying/.
+Sam Hocevar. The full license text can be found at http://sam.zoy.org/wtfpl/COPYING.
